@@ -89,11 +89,19 @@
      'pipe ' + addr :
      'port ' + addr.port;
    debug('Listening on ' + bind);
-   console.log('[Server Port] ', configurations.server.port)
-   console.log('[Request Limit] ', configurations.server.requestLimit)
+   
+   console.log('')
    console.log('[App Title] ', configurations.app.title)
    console.log('[App Description] ', configurations.app.description)
    console.log('[App Version] ', configurations.app.version)
+   console.log('[Server Port] ', configurations.server.port)
+   console.log('[Request Limit] ', configurations.server.requestLimit)
+   console.log('[Server Log Enabled] ', configurations.server.log.isEnabled)
+   console.log('[Server Log Msg] ', configurations.server.log.msg)
+   console.log('[Server Log Console Transport Options] ', configurations.server.log.transport.console)
+   console.log('[Server Log File Transport Options] ', configurations.server.log.transport.file)
+   console.log('[Server Log Http Transport Options] ', configurations.server.log.transport.http)
+   console.log('[Server Log Stream Transport Options] ', configurations.server.log.transport.stream)
    console.log('')
    console.log(`Express listening on ${bind}`)
  }
