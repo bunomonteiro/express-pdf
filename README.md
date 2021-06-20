@@ -8,9 +8,8 @@ To run your PDF Docker image use the docker run command as follows:
 $ docker run --name <container name> \
 -p <host port>:9090 \
 -v <host path>:/usr/app/logs \
--e SERVER_LOG_TRASNPORT_FILE="{ \""filename\"": \""/usr/app/logs/log.log\"" }" 
-
-bunomonteiro/pdf:1.0.0
+-e SERVER_LOG_TRASNPORT_FILE="{ \""filename\"": \""/usr/app/logs/log.log\"" }"  \
+bunomonteiro/pdf
 
 Parameters:
     --name:                             The name of the container (default: auto generated). Optional.
