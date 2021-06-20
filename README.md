@@ -43,3 +43,14 @@ $ curl --request POST \
 	}
 }'
 ```
+
+### Quick reference
+- **Maintained by**: [Bruno Monteiro](https://github.com/bunomonteiro/express-pdf)
+- **Dockerfile links**: [Dockerfile](https://github.com/bunomonteiro/express-pdf/blob/main/Dockerfile)
+
+
+
+## License
+This Docker image and the API source code is issued under [MIT license](https://github.com/bunomonteiro/express-pdf/blob/main/LICENSE), a permissive free license, which means you can modify it as you please, and incorporate it into your own commercial or non-commercial software.
+
+**Free Software, oh yeah!**
