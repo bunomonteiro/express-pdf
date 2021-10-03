@@ -17,13 +17,16 @@ Parameters:
     -v /usr/app/logs:                   The data volume to use for the api log. Optional.
     -e SERVER_PORT:                     The api service port. Default: 9090. Optional.
     -e SERVER_REQUEST_LIMIT:            The api request size limit. Default: 1mb. Optional.
-    -e SERVER_LOG:                      The log flag. Default: true. Optional.
+    -e SERVER_LOG:                      The express log flag. Default: true. Optional.
     -e SERVER_LOG_MSG:                  The log message format. Optional.
     -e SERVER_LOG_TRASNPORT_CONSOLE:    The log Console transport JSON options. Default: {}. Optional.
     -e SERVER_LOG_TRASNPORT_FILE:       The log File transport JSON options. Optional.
     -e SERVER_LOG_TRASNPORT_HTTP:       The log HTTP transport JSON options. Optional.
     -e SERVER_LOG_TRASNPORT_STREAM:     The log Stream transport JSON options. Optional.
 ```
+> ¹ All log configuration is related to [winston](https://www.npmjs.com/package/winston)
+
+> ² All log transport configurations are in JSON format. Details in [winston transports](https://www.npmjs.com/package/winston#transports)
 
 How to test the service:
 
