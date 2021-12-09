@@ -1,4 +1,4 @@
-FROM node:14-alpine
+FROM node:16.13.1-alpine
 
 WORKDIR /src/app/
 
@@ -15,23 +15,64 @@ ENV SERVER_LOG_TRASNPORT_CONSOLE=
 ENV SERVER_LOG_TRASNPORT_FILE=
 ENV SERVER_LOG_TRASNPORT_HTTP=
 ENV SERVER_LOG_TRASNPORT_STREAM=
+ENV CHROMIUM_BIN="/usr/bin/chromium-browser"
 
-# Phantomjs installation
-RUN apk --update add ttf-ubuntu-font-family fontconfig && rm -rf /var/cache/apk/*
-ENV PHANTOMJS_VERSION=2.1.1
-RUN apk add --no-cache curl && \
-    cd /tmp && curl -Ls https://github.com/dustinblackman/phantomized/releases/download/${PHANTOMJS_VERSION}/dockerized-phantomjs.tar.gz | tar xz && \
-    cp -R lib lib64 / && \
-    cp -R usr/lib/x86_64-linux-gnu /usr/lib && \
-    cp -R usr/share /usr/share && \
-    cp -R etc/fonts /etc && \
-    curl -k -Ls https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-${PHANTOMJS_VERSION}-linux-x86_64.tar.bz2 | tar -jxf - && \
-    cp phantomjs-${PHANTOMJS_VERSION}-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs && \
-    rm -fR phantomjs-${PHANTOMJS_VERSION}-linux-x86_64 && \
-    apk del curl
+RUN set -x \
+    && apk update \
+    && apk upgrade \
+    && apk add --no-cache \
+    eudev-libs \
+    flac \
+    libx11 \
+    libxcomposite \
+    libxdamage \
+    libxext \
+    libxfixes \
+    libxrandr \
+    alsa-lib \
+    atk \
+    at-spi2-atk \
+    libatomic \
+    at-spi2-core \
+    ffmpeg-libs \
+    musl \
+    cairo \
+    cups-libs \
+    dbus-libs \
+    libdrm \
+    libevent \
+    expat \
+    fontconfig \
+    freetype \
+    mesa-gbm \
+    libgcc \
+    glib \
+    harfbuzz \
+    libjpeg-turbo \
+    lcms2 \
+    nspr \
+    nss \
+    opus \
+    pango \
+    libpng \
+    re2 \
+    snappy \
+    libstdc++ \
+    libwebp \
+    libxcb \
+    libxkbcommon \
+    libxml2 \
+    libxshmfence \
+    libxslt \
+    zlib \
+    ttf-opensans \
+    xdg-utils \
+    ttf-freefont \
+    chromium
 
 RUN npm install && npm audit fix
 
+RUN apk del --no-cache make gcc g++ binutils-gold gnupg libstdc++ && rm -rf /usr/include && rm -rf /var/cache/apk/* /root/.node-gyp /usr/share/man /tmp/* && echo
 
 EXPOSE ${SERVER_PORT}
 

@@ -1,22 +1,25 @@
 {
   "name": "pdf-service",
-  "version": "0.0.0",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "cross-env CHROMIUM_BIN=\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" node ./bin/www",
     "debug": "nodemon --debug ./bin/www"
   },
   "dependencies": {
-    "cookie-parser": "~1.4.4",
+    "cookie-parser": "^1.4.6",
     "debug": "~2.6.9",
     "dotenv": "^10.0.0",
     "express": "~4.16.1",
-    "express-winston": "^4.1.0",
-    "hbs": "^4.1.2",
+    "express-winston": "^4.2.0",
+    "handlebars": "^4.7.7",
+    "hbs": "^4.2.0",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
-    "pdf-creator-node": "^2.2.2",
+    "puppeteer-core": "^12.0.1",
     "winston": "^3.3.3"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  }
 }
