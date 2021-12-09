@@ -5,9 +5,12 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "pwa-node",
+            "type": "node",
             "request": "launch",
             "name": "Run Server",
+            "env": {
+                "CHROMIUM_BIN": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+            },
             "skipFiles": [
                 "<node_internals>/**"
             ],
