@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const cors = require('cors')
 
 const configurations = require('./common/configurations');
 
@@ -51,6 +52,10 @@ if (configurations.server.log.isEnabled) {
     // colorize: false, // Color the text and status code, using the Express/morgan color palette (text: gray, status: default green, 3XX cyan, 4XX yellow, 5XX red).
     // ignoreRoute: function (req, res) { return false; } // optional: allows to skip some log messages based on request and/or response
   }));
+}
+
+if(configurations.server.cors) {
+  app.use(cors(JSON.parse(configurations.server.cors)));
 }
 
 app.use('/', indexRouter);

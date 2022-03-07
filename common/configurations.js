@@ -11,7 +11,8 @@ module.exports = {
                 http: process.env.SERVER_LOG_TRASNPORT_HTTP,
                 stream: process.env.SERVER_LOG_TRASNPORT_STREAM,
             }
-        }
+        },
+        cors: process.env.SERVER_CORS
     },
     app: {
         title: process.env.APP_TITLE,

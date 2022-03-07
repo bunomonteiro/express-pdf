@@ -9,6 +9,7 @@ $ docker run --name <container name> \
 -p <host port>:9090 \
 -v <host path>:/usr/app/logs \
 -e SERVER_LOG_TRASNPORT_FILE="{ \""filename\"": \""/usr/app/logs/log.log\"" }"  \
+-e SERVER_CORS="{ \""origin\"": \""http://example.com\"", \""optionsSuccessStatus\"": 200 }"  \
 bunomonteiro/pdf
 
 Parameters:
@@ -23,10 +24,13 @@ Parameters:
     -e SERVER_LOG_TRASNPORT_FILE:       The log File transport JSON options. Optional.
     -e SERVER_LOG_TRASNPORT_HTTP:       The log HTTP transport JSON options. Optional.
     -e SERVER_LOG_TRASNPORT_STREAM:     The log Stream transport JSON options. Optional.
+    -e SERVER_CORS:                     The cors JSON options. Optional.
 ```
 > ¹ All log configuration is related to [winston](https://www.npmjs.com/package/winston)
 
 > ² All log transport configurations are in JSON format. Details in [winston transports](https://www.npmjs.com/package/winston#transports)
+
+> ³ All cors configurations are in JSON format. Details in [cors](https://expressjs.com/en/resources/middleware/cors.html)
 
 How to test the service:
 
