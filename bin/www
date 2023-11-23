@@ -26,6 +26,8 @@ app.set('port', port);
  */
 const server = http.createServer(app);
 
+server.timeout = configurations.server.timeout;
+
 /**
  * Listen on provided port, on all network interfaces.
  */
