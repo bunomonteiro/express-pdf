@@ -18,6 +18,7 @@ Parameters:
     -v /usr/app/logs:                   The data volume to use for the api log. Optional.
     -e SERVER_PORT:                     The api service port. Default: 9090. Optional.
     -e SERVER_REQUEST_LIMIT:            The api request size limit. Default: 1mb. Optional.
+    -e SERVER_REQUEST_TIMEOUT:          The api request timeout in milliseconds. Default: 300000. Optional.
     -e SERVER_LOG:                      The express log flag. Default: true. Optional.
     -e SERVER_LOG_MSG:                  The log message format. Optional.
     -e SERVER_LOG_TRASNPORT_CONSOLE:    The log Console transport JSON options. Default: {}. Optional.

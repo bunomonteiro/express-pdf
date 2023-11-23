@@ -26,6 +26,8 @@ app.set('port', port);
  */
 const server = http.createServer(app);
 
+server.timeout = configurations.server.timeout;
+
 /**
  * Listen on provided port, on all network interfaces.
  */
@@ -86,6 +88,7 @@ async function launchBrowser() {
 
   const browser = await Puppeteer.launch({
     args: ['--disable-gpu', '--no-sandbox'],
+    protocolTimeout: configurations.server.timeout,
     executablePath: process.env.CHROMIUM_BIN || null
   });
 

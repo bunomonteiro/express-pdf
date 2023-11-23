@@ -22,6 +22,7 @@ router.post('/', async (request, response, next) => {
     };
 
     let options = request.body.options || defaultOptions;
+    options.timeout = 0;
     // #begin backward compatibility
     options.landscape = options.orientation === "landscape";
     options.margin = {

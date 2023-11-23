@@ -1,4 +1,4 @@
-FROM node:16.13.1-alpine
+FROM node:16.20.2-alpine
 
 WORKDIR /src/app/
 
@@ -9,6 +9,7 @@ ENV APP_DESCRIPTION="PDF generator as a service"
 ENV APP_VERSION=1.0.0
 ENV SERVER_PORT=9090
 ENV SERVER_REQUEST_LIMIT=1mb
+ENV SERVER_REQUEST_TIMEOUT=300000
 ENV SERVER_LOG=true
 ENV SERVER_LOG_MSG=
 ENV SERVER_LOG_TRASNPORT_CONSOLE=
@@ -30,8 +31,8 @@ RUN set -x \
     libxfixes \
     libxrandr \
     alsa-lib \
-    atk \
-    at-spi2-atk \
+#    atk \
+#    at-spi2-atk \
     libatomic \
     at-spi2-core \
     ffmpeg-libs \

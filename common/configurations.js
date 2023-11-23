@@ -2,6 +2,7 @@ module.exports = {
     server: {
         port: process.env.SERVER_PORT,
         requestLimit: process.env.SERVER_REQUEST_LIMIT || '1mb',
+        timeout: parseInt(process.env.SERVER_REQUEST_TIMEOUT || 300000),
         log: {
             isEnabled: process.env.SERVER_LOG || true,
             msg: process.env.SERVER_LOG_MSG,
